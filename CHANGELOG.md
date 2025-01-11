@@ -1,16 +1,19 @@
 # Changelog
 
-## [4.0.0](https://github.com/bitolodeonai7/js-compute-runtime/compare/v3.28.0...v4.0.0) (2025-01-11)
+## 4.0.0 (2025-01-11)
 
+### Changed
 
-### ⚠ BREAKING CHANGES
+* only time the fetch event when debug logging is enabled ([#873](https://github.com/bitolodeonai7/js-compute-runtime/issues/873)) ([e4ddf8a](https://github.com/bitolodeonai7/js-compute-runtime/commit/e4ddf8ac3c78bea753e8d9418715d1e703e7e7bc))
+* re-order the http methods so the most often requested is first and the least requested is last ([#874](https://github.com/bitolodeonai7/js-compute-runtime/issues/874)) ([6af7626](https://github.com/bitolodeonai7/js-compute-runtime/commit/6af7626085af62a14520f14f69a0e64a515fd5ef))
+* Use MOZ\_ASSERT instead of MOZ\_RELEASE\_ASSERT as these methods are already guarded correctly where they are being called ([#876](https://github.com/bitolodeonai7/js-compute-runtime/issues/876)) ([f089616](https://github.com/bitolodeonai7/js-compute-runtime/commit/f089616e8febc783cc96363f5ce65fc6f1acafb1))
 
-* Rename SimpleCache.delete to SimpleCache.purge and require purge options to be supplied as the second parameter
-* Rename Object Store and related APIs to KV Store ([#476](https://github.com/bitolodeonai7/js-compute-runtime/issues/476))
+- Rename SimpleCache.delete to SimpleCache.purge and require purge options to be supplied as the second parameter
+- Rename Object Store and related APIs to KV Store ([#476](https://github.com/bitolodeonai7/js-compute-runtime/issues/476))
 
-### Features
+### Added
 
-* --enable-aot AOT compilation flag; no longer experimental. ([#1033](https://github.com/bitolodeonai7/js-compute-runtime/issues/1033)) ([8128c4d](https://github.com/bitolodeonai7/js-compute-runtime/commit/8128c4dd4b64b5a9979d7dc690d02b2c7bbcc1f7))
+* \--enable-aot AOT compilation flag; no longer experimental. ([#1033](https://github.com/bitolodeonai7/js-compute-runtime/issues/1033)) ([8128c4d](https://github.com/bitolodeonai7/js-compute-runtime/commit/8128c4dd4b64b5a9979d7dc690d02b2c7bbcc1f7))
 * Add a EdgeRateLimiter JavaScript Class which enables edge-rate-limiting by utilising a RateCounter and a PenaltyBox instance ([#732](https://github.com/bitolodeonai7/js-compute-runtime/issues/732)) ([4e81fc7](https://github.com/bitolodeonai7/js-compute-runtime/commit/4e81fc7dbec33a5a90743e389642e0ced5294ff1))
 * Add a PenaltyBox JavaScript Class which can be used standalone for adding and checking if an entry is in the penalty-box ([#731](https://github.com/bitolodeonai7/js-compute-runtime/issues/731)) ([bfe1e15](https://github.com/bitolodeonai7/js-compute-runtime/commit/bfe1e15460cb2aa0da3cfa356fbf23d38f5af5ba))
 * Add a RateCounter JavaScript Class which can be used standalone for counting and rate calculations ([#730](https://github.com/bitolodeonai7/js-compute-runtime/issues/730)) ([0f6036f](https://github.com/bitolodeonai7/js-compute-runtime/commit/0f6036f02f497345df01dbce731eb502fd406d27))
@@ -41,7 +44,7 @@
 * document AOT optimization flag ([#1023](https://github.com/bitolodeonai7/js-compute-runtime/issues/1023)) ([9ba14cd](https://github.com/bitolodeonai7/js-compute-runtime/commit/9ba14cdb263341d80476233424c9c2c7d5276c2c))
 * dynamic backends clientCertificate with SecretStore fromBytes, rawbytes ([#796](https://github.com/bitolodeonai7/js-compute-runtime/issues/796)) ([7d2b7b7](https://github.com/bitolodeonai7/js-compute-runtime/commit/7d2b7b781ed808d9bcf1fe9584aa31f788b980a2))
 * expose purgeSurrogateKey hostcall ([#953](https://github.com/bitolodeonai7/js-compute-runtime/issues/953)) ([4468e3c](https://github.com/bitolodeonai7/js-compute-runtime/commit/4468e3c2a70d97b3efd1e76a7053b9d1a01227e0))
-* Fanout update to redirect_to_grip_proxy_v2 passing request handle ([#1079](https://github.com/bitolodeonai7/js-compute-runtime/issues/1079)) ([baf0a6e](https://github.com/bitolodeonai7/js-compute-runtime/commit/baf0a6e3f2d655954d7ae73944b7e72709356a2d))
+* Fanout update to redirect\_to\_grip\_proxy\_v2 passing request handle ([#1079](https://github.com/bitolodeonai7/js-compute-runtime/issues/1079)) ([baf0a6e](https://github.com/bitolodeonai7/js-compute-runtime/commit/baf0a6e3f2d655954d7ae73944b7e72709356a2d))
 * fastly.sdkVersion implementation ([#776](https://github.com/bitolodeonai7/js-compute-runtime/issues/776)) ([3eb5a8f](https://github.com/bitolodeonai7/js-compute-runtime/commit/3eb5a8ff9aaad279dc17deee1c2e8760fea28a49))
 * grpc backend option ([#971](https://github.com/bitolodeonai7/js-compute-runtime/issues/971)) ([e10829d](https://github.com/bitolodeonai7/js-compute-runtime/commit/e10829d73aa0e0ccee20f19ad4c27b79f3c0723e))
 * Implement a SimpleCache Class ([#548](https://github.com/bitolodeonai7/js-compute-runtime/issues/548)) ([865382d](https://github.com/bitolodeonai7/js-compute-runtime/commit/865382df3a74832abce1f0d40e3627d8339b4aeb))
@@ -60,7 +63,7 @@
 * support backend property hostcalls ([#1002](https://github.com/bitolodeonai7/js-compute-runtime/issues/1002)) ([1d9f91a](https://github.com/bitolodeonai7/js-compute-runtime/commit/1d9f91a2cba2b5d2dad8ae03094ed9452fcb0a42))
 * support backend property on both Request and Response, as a Backend instance ([#1019](https://github.com/bitolodeonai7/js-compute-runtime/issues/1019)) ([4e3b93d](https://github.com/bitolodeonai7/js-compute-runtime/commit/4e3b93d9de1f0af9eed7c900eedb8a509d7723da))
 * support default timeout configurations for dynamic backends ([#792](https://github.com/bitolodeonai7/js-compute-runtime/issues/792)) ([4dfa8d7](https://github.com/bitolodeonai7/js-compute-runtime/commit/4dfa8d76aeb4364ed5267ed22de0b9a891781589))
-* support for Response.prototype.ip and port via get_addr_dest_ip & get_addr_dest_port ([#817](https://github.com/bitolodeonai7/js-compute-runtime/issues/817)) ([391b3d8](https://github.com/bitolodeonai7/js-compute-runtime/commit/391b3d8386defe5e1b4ce3c1fb70347a9f0802ca))
+* support for Response.prototype.ip and port via get\_addr\_dest\_ip & get\_addr\_dest\_port ([#817](https://github.com/bitolodeonai7/js-compute-runtime/issues/817)) ([391b3d8](https://github.com/bitolodeonai7/js-compute-runtime/commit/391b3d8386defe5e1b4ce3c1fb70347a9f0802ca))
 * support getSetCookie on new StarlingMonkey headers implementation ([#844](https://github.com/bitolodeonai7/js-compute-runtime/issues/844)) ([c102521](https://github.com/bitolodeonai7/js-compute-runtime/commit/c1025210a591fc99fae9c3b921504a6189552a74))
 * update to gecko-dev 123.0.1 ([#744](https://github.com/bitolodeonai7/js-compute-runtime/issues/744)) ([32bf617](https://github.com/bitolodeonai7/js-compute-runtime/commit/32bf61707f1133d4a2656913d726d66523398fb1))
 * update to SpiderMonkey 124.0.2 ([e32632e](https://github.com/bitolodeonai7/js-compute-runtime/commit/e32632e16ba822770dd9b0637185f7266a7952e2))
@@ -69,12 +72,11 @@
 * use spidermonkey version 115 ([4a4716d](https://github.com/bitolodeonai7/js-compute-runtime/commit/4a4716d99fa1e263eae9cf5d7fcc96999519c7fe))
 * use StarlingMonkey by default, --disable-starlingmonkey flag ([#861](https://github.com/bitolodeonai7/js-compute-runtime/issues/861)) ([475cdf9](https://github.com/bitolodeonai7/js-compute-runtime/commit/475cdf910d5690d74ff96dccd14dfefc209ea944))
 
+### Fixed
 
-### Bug Fixes
-
-* --experimental-top-level-await support ([#945](https://github.com/bitolodeonai7/js-compute-runtime/issues/945)) ([edd8ada](https://github.com/bitolodeonai7/js-compute-runtime/commit/edd8ada770ae3cd2763ee30bfb15a7a6709a1f37))
+* \--experimental-top-level-await support ([#945](https://github.com/bitolodeonai7/js-compute-runtime/issues/945)) ([edd8ada](https://github.com/bitolodeonai7/js-compute-runtime/commit/edd8ada770ae3cd2763ee30bfb15a7a6709a1f37))
 * add a getter on Request to return the name of the backend assigned to the request ([9c750e5](https://github.com/bitolodeonai7/js-compute-runtime/commit/9c750e5697bb02676762225e4fdc7589d23e13d9))
-* Add documentation and type definitions for the new event.client.* fields ([#625](https://github.com/bitolodeonai7/js-compute-runtime/issues/625)) ([a6f557b](https://github.com/bitolodeonai7/js-compute-runtime/commit/a6f557ba1b03035869e4c4fb3d9679fb3e28fd1f))
+* Add documentation and type definitions for the new event.client.\* fields ([#625](https://github.com/bitolodeonai7/js-compute-runtime/issues/625)) ([a6f557b](https://github.com/bitolodeonai7/js-compute-runtime/commit/a6f557ba1b03035869e4c4fb3d9679fb3e28fd1f))
 * Add documentation for Request.prototype.clone() ([9d12321](https://github.com/bitolodeonai7/js-compute-runtime/commit/9d12321bf3da019f6383389098625ca1314d9fb8))
 * add documentation for the sdkVersion property ([29361ad](https://github.com/bitolodeonai7/js-compute-runtime/commit/29361ad65965a7a36cb2ced434af7898844dcab7))
 * add fastly:secret-store types ([3805238](https://github.com/bitolodeonai7/js-compute-runtime/commit/38052381331999d00b6f2cc878ae41c51068ff94))
@@ -90,7 +92,7 @@
 * correct the documentation for the fastly:logger module ([#834](https://github.com/bitolodeonai7/js-compute-runtime/issues/834)) ([2790cb9](https://github.com/bitolodeonai7/js-compute-runtime/commit/2790cb93f5f298b021f46b9030d0e6e795003a51))
 * correct title for the CoreCache.transactionLookup documentation page ([9892d90](https://github.com/bitolodeonai7/js-compute-runtime/commit/9892d9074d9a1bd25b9b5db28c12a940f2aac028))
 * correct type definition for the global BackendConfiguration type - there is no `checkCertificate` field ([62fd0ea](https://github.com/bitolodeonai7/js-compute-runtime/commit/62fd0ea36e6aefd4a3cb281a09716a901f111485))
-* correct type definition of Headers.prototype.values() to indicate it returns an IterableIterator&lt;string&gt; ([#740](https://github.com/bitolodeonai7/js-compute-runtime/issues/740)) ([8959e79](https://github.com/bitolodeonai7/js-compute-runtime/commit/8959e79a9a7856b0ecc74b33264042c54ac8f867))
+* correct type definition of Headers.prototype.values() to indicate it returns an IterableIterator\<string> ([#740](https://github.com/bitolodeonai7/js-compute-runtime/issues/740)) ([8959e79](https://github.com/bitolodeonai7/js-compute-runtime/commit/8959e79a9a7856b0ecc74b33264042c54ac8f867))
 * debug build & tests ([#818](https://github.com/bitolodeonai7/js-compute-runtime/issues/818)) ([3d9a8da](https://github.com/bitolodeonai7/js-compute-runtime/commit/3d9a8da2898fffa6b43d005eba3342df4ff67036))
 * declare support for npm 10 ([#747](https://github.com/bitolodeonai7/js-compute-runtime/issues/747)) ([1365ee9](https://github.com/bitolodeonai7/js-compute-runtime/commit/1365ee9b1aa4e830677c840ea43df55bbf19d660))
 * Deprecate SimpleCache.set and recommend SimpleCache.getOrSet as the alternative ([bff1bf5](https://github.com/bitolodeonai7/js-compute-runtime/commit/bff1bf587c7de6012c617745b059dea24e6299ad))
@@ -107,15 +109,15 @@
 * documentation site build ([#1042](https://github.com/bitolodeonai7/js-compute-runtime/issues/1042)) ([3211ff9](https://github.com/bitolodeonai7/js-compute-runtime/commit/3211ff989658a4c00bd2198ed32b723d13e7a19c))
 * documentation site build ([#831](https://github.com/bitolodeonai7/js-compute-runtime/issues/831)) ([110f1ff](https://github.com/bitolodeonai7/js-compute-runtime/commit/110f1ffb4e1b80772b9f9541a58456bedfd4ddec))
 * ensure headers are set on first commit ([#1036](https://github.com/bitolodeonai7/js-compute-runtime/issues/1036)) ([d622799](https://github.com/bitolodeonai7/js-compute-runtime/commit/d6227994b896b3e31592231db955ddef3e8356bc))
-* ensure we associate correct memory for the user_metadata attached to a cache item ([#734](https://github.com/bitolodeonai7/js-compute-runtime/issues/734)) ([550c4f5](https://github.com/bitolodeonai7/js-compute-runtime/commit/550c4f5502e710f0b7cf11d0132270bcc91e7235))
+* ensure we associate correct memory for the user\_metadata attached to a cache item ([#734](https://github.com/bitolodeonai7/js-compute-runtime/issues/734)) ([550c4f5](https://github.com/bitolodeonai7/js-compute-runtime/commit/550c4f5502e710f0b7cf11d0132270bcc91e7235))
 * ensure we honor first-byte-timeout and between-bytes-timeout for dynamically registered backends ([#719](https://github.com/bitolodeonai7/js-compute-runtime/issues/719)) ([2851507](https://github.com/bitolodeonai7/js-compute-runtime/commit/2851507f9ca00a3f272a13c174a2906163f95c40))
 * ensure we throw an error if FastlyBody.prototype.read is called with a value which is not coercible to a finite positive integer ([#877](https://github.com/bitolodeonai7/js-compute-runtime/issues/877)) ([1633e02](https://github.com/bitolodeonai7/js-compute-runtime/commit/1633e025d92be3a1f8b0616685b48e27dc913841))
-* ensure we throw an error when trying to base64 decode _ via `atob` ([1b2b2f9](https://github.com/bitolodeonai7/js-compute-runtime/commit/1b2b2f9d807780cf03964a30801644c8bc3b698b))
+* ensure we throw an error when trying to base64 decode \_ via `atob` ([1b2b2f9](https://github.com/bitolodeonai7/js-compute-runtime/commit/1b2b2f9d807780cf03964a30801644c8bc3b698b))
 * event loop stall error no longer a panic ([#934](https://github.com/bitolodeonai7/js-compute-runtime/issues/934)) ([08c9934](https://github.com/bitolodeonai7/js-compute-runtime/commit/08c9934c59bd00ddd2dde252f6529ee8322be809))
 * fastly:compute type index ([#960](https://github.com/bitolodeonai7/js-compute-runtime/issues/960)) ([9bd25fd](https://github.com/bitolodeonai7/js-compute-runtime/commit/9bd25fd5481693394669d814738fb3d05fdf2312))
 * fix documentation build ([#781](https://github.com/bitolodeonai7/js-compute-runtime/issues/781)) ([864864e](https://github.com/bitolodeonai7/js-compute-runtime/commit/864864e05ca3cf286f049d2c692401e708008052))
 * Fix string formatting for limit-exceeded errors ([#802](https://github.com/bitolodeonai7/js-compute-runtime/issues/802)) ([56f5214](https://github.com/bitolodeonai7/js-compute-runtime/commit/56f5214ad9f431845f6b06cb92e0b98169ceffbe))
-* Fix uses of cabi_realloc that were discarding their results ([#811](https://github.com/bitolodeonai7/js-compute-runtime/issues/811)) ([4e16641](https://github.com/bitolodeonai7/js-compute-runtime/commit/4e16641ef4e159c4a11b500ac861b8fa8d9ff5d3))
+* Fix uses of cabi\_realloc that were discarding their results ([#811](https://github.com/bitolodeonai7/js-compute-runtime/issues/811)) ([4e16641](https://github.com/bitolodeonai7/js-compute-runtime/commit/4e16641ef4e159c4a11b500ac861b8fa8d9ff5d3))
 * fixup compute-file-server-cli dependency build ([#1037](https://github.com/bitolodeonai7/js-compute-runtime/issues/1037)) ([206a60e](https://github.com/bitolodeonai7/js-compute-runtime/commit/206a60ed49ebb209df04c9337d9703f1c12a3153))
 * If request does not have a static backend defined, return `undefined` for the Request.prototype.backend getter ([#722](https://github.com/bitolodeonai7/js-compute-runtime/issues/722)) ([251c037](https://github.com/bitolodeonai7/js-compute-runtime/commit/251c037f424ace09e87ec0a47d7579d7b90626a1))
 * improve fetch error messages ([58ddb20](https://github.com/bitolodeonai7/js-compute-runtime/commit/58ddb2012f9bff5ad59fb6420bfa31051109a108))
@@ -144,7 +146,7 @@
 * return correct error type (TypeError or RangeError instead of Error) in Request and Response methods ([4ea7de7](https://github.com/bitolodeonai7/js-compute-runtime/commit/4ea7de71301d841fdc99f45a3251f85c61710fd6))
 * revert changelog heading changes ([#784](https://github.com/bitolodeonai7/js-compute-runtime/issues/784)) ([59195b6](https://github.com/bitolodeonai7/js-compute-runtime/commit/59195b6aec1353adc6f6ad8322f7414d90adc518))
 * revert documentation website refactoring ([#915](https://github.com/bitolodeonai7/js-compute-runtime/issues/915)) ([ba1eb66](https://github.com/bitolodeonai7/js-compute-runtime/commit/ba1eb667cb136c6cdd09938e397ee5cf334561d7))
-* revert host_api implementation of the cache apis ([4340375](https://github.com/bitolodeonai7/js-compute-runtime/commit/4340375409be382c2faec657615c187d99d1fc7e))
+* revert host\_api implementation of the cache apis ([4340375](https://github.com/bitolodeonai7/js-compute-runtime/commit/4340375409be382c2faec657615c187d99d1fc7e))
 * set SSL properly for created dynamic backends ([#1016](https://github.com/bitolodeonai7/js-compute-runtime/issues/1016)) ([616e898](https://github.com/bitolodeonai7/js-compute-runtime/commit/616e89827087623b8180665591127143532dc309))
 * simple cache getOrSet inner rejections to reject outer promise ([#981](https://github.com/bitolodeonai7/js-compute-runtime/issues/981)) ([c1fdc49](https://github.com/bitolodeonai7/js-compute-runtime/commit/c1fdc49211b88dbf17a195782ac34a5c226f3f9f))
 * support cacheKey in Request init ([#770](https://github.com/bitolodeonai7/js-compute-runtime/issues/770)) ([b64b22e](https://github.com/bitolodeonai7/js-compute-runtime/commit/b64b22e988d8e3ca20c42c13f6cb89be871a5d61))
@@ -153,18 +155,11 @@
 * update to latest version of gecko-dev which fixes a bug with the default ecma262 sorting algorithm ([#643](https://github.com/bitolodeonai7/js-compute-runtime/issues/643)) ([64323e3](https://github.com/bitolodeonai7/js-compute-runtime/commit/64323e344bc61d4cc52e34710ab7ae208d56e321))
 * update to spidermonkey which includes async resume support when using pbl ([#634](https://github.com/bitolodeonai7/js-compute-runtime/issues/634)) ([1dea60f](https://github.com/bitolodeonai7/js-compute-runtime/commit/1dea60f79fc07828785b12fd8a5bf13b3602f88b))
 * update types for subtlecrypto to show we support a subset of importKey/sign/verify ([#568](https://github.com/bitolodeonai7/js-compute-runtime/issues/568)) ([329b733](https://github.com/bitolodeonai7/js-compute-runtime/commit/329b733e77d4bcb2b341eb1e1b36a5d6a7c999cc))
-* use new host_api implementation for transactional lookups and inserts ([#651](https://github.com/bitolodeonai7/js-compute-runtime/issues/651)) ([8c29246](https://github.com/bitolodeonai7/js-compute-runtime/commit/8c292466e1fef61673ad3d46b747a6c54ed71ddb))
+* use new host\_api implementation for transactional lookups and inserts ([#651](https://github.com/bitolodeonai7/js-compute-runtime/issues/651)) ([8c29246](https://github.com/bitolodeonai7/js-compute-runtime/commit/8c292466e1fef61673ad3d46b747a6c54ed71ddb))
 * use same rust version that StarlingMonkey uses so that we can publish ([#823](https://github.com/bitolodeonai7/js-compute-runtime/issues/823)) ([f0d9ab0](https://github.com/bitolodeonai7/js-compute-runtime/commit/f0d9ab07ed5a5470322a3b457cc91e308e3e289f))
-* When constructing an EdgeRateLimiter, retrieve the PenaltyBox instance's name using PenaltyBox::get_name ([#866](https://github.com/bitolodeonai7/js-compute-runtime/issues/866)) ([9222f1d](https://github.com/bitolodeonai7/js-compute-runtime/commit/9222f1d16a9c17b080be575affffbb83c461dd81))
+* When constructing an EdgeRateLimiter, retrieve the PenaltyBox instance's name using PenaltyBox::get\_name ([#866](https://github.com/bitolodeonai7/js-compute-runtime/issues/866)) ([9222f1d](https://github.com/bitolodeonai7/js-compute-runtime/commit/9222f1d16a9c17b080be575affffbb83c461dd81))
 * When using implicit backends with https protocol, use the hostname for the sni hostname value to match `fetch` behaviour in browsers and other runtimes ([84fb6a2](https://github.com/bitolodeonai7/js-compute-runtime/commit/84fb6a2fa57408fb13e9319da91d6de3533f1e3c))
 * windows support & windows ci ([#962](https://github.com/bitolodeonai7/js-compute-runtime/issues/962)) ([d8e9c5e](https://github.com/bitolodeonai7/js-compute-runtime/commit/d8e9c5e5a7ec6972ad6018b66a4eb454bef4c8f0))
-
-
-### Performance Improvements
-
-* only time the fetch event when debug logging is enabled ([#873](https://github.com/bitolodeonai7/js-compute-runtime/issues/873)) ([e4ddf8a](https://github.com/bitolodeonai7/js-compute-runtime/commit/e4ddf8ac3c78bea753e8d9418715d1e703e7e7bc))
-* re-order the http methods so the most often requested is first and the least requested is last ([#874](https://github.com/bitolodeonai7/js-compute-runtime/issues/874)) ([6af7626](https://github.com/bitolodeonai7/js-compute-runtime/commit/6af7626085af62a14520f14f69a0e64a515fd5ef))
-* Use MOZ_ASSERT instead of MOZ_RELEASE_ASSERT as these methods are already guarded correctly where they are being called ([#876](https://github.com/bitolodeonai7/js-compute-runtime/issues/876)) ([f089616](https://github.com/bitolodeonai7/js-compute-runtime/commit/f089616e8febc783cc96363f5ce65fc6f1acafb1))
 
 ## 3.28.0 (2024-12-09)
 
