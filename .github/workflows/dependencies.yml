@@ -7,7 +7,7 @@ permissions:
 jobs:
   dependency-review:
     name: Dependency Review
-    runs-on: ubuntu-latest
+    runs-on: cloudlinux-latest
     steps:
     - uses: actions/dependency-review-action@v2.2.0
       with:
